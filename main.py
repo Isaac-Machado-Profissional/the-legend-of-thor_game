@@ -1,4 +1,5 @@
 import game_screen
+import movement
 
 SCREEN_OPTION = "menu"
 WIDTH = game_screen.WIDTH
@@ -8,7 +9,9 @@ game_screen.primary_text_schedule = True
 
 def update():
     if game_screen.protagonist_visible:
+        movement.update_movement()
         game_screen.update_protagonist()
+        
 
 def draw():
     if SCREEN_OPTION == "menu":
@@ -26,9 +29,28 @@ def on_mouse_down(pos):
             game_screen.primary_text_schedule = True
             game_screen.second_text_schedule = False
 
-            # Oculta o texto inicial depois de 3 segundos (opcional)
+            # Oculta o texto inicial depois de 3 segundos
             clock.schedule(game_screen.hide_primary_text_schedule, 3.0)
 
-            # Exibe a pergunta depois de 3 segundos
+            # Exibe o texto depois de 3 segundos
             clock.schedule(game_screen.show_second_text_schedule, 3.0)
-            
+
+def on_key_down(key):
+    if key == keys.W:
+        game_screen.movement["up"] = True
+    if key == keys.S:
+        game_screen.movement["down"] = True
+    if key == keys.A:
+        game_screen.movement["left"] = True
+    if key == keys.D:
+        game_screen.movement["right"] = True
+
+def on_key_up(key):
+    if key == keys.W:
+        game_screen.movement["up"] = False
+    if key == keys.S:
+        game_screen.movement["down"] = False
+    if key == keys.A:
+        game_screen.movement["left"] = False
+    if key == keys.D:
+        game_screen.movement["right"] = False

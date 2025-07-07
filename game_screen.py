@@ -21,17 +21,32 @@ protagonist_float_phase = 0
 
 thor = Actor("thor_idle")
 thor.midbottom = (WIDTH // 2, HEIGHT //2)
+thor_base_y = HEIGHT - 50  # valor global
 
+movement = {
+    "up": False,
+    "down": False,
+    "left": False,
+    "right": False
+}
+
+movement_speed = 2
+
+# Função para exibir o protagonista:
 def show_protagonist():
     global protagonist_visible
     protagonist_visible = True
 
+
+# Thor respirando:
 def update_protagonist():
     global protagonist_float_phase
     if protagonist_visible:
         protagonist_float_phase += 0.1
-        thor.y = (HEIGHT - 50) + math.sin(protagonist_float_phase) * 1  # sobe e desce 5px
+        offset = math.sin(protagonist_float_phase) * 3
+        thor.y = thor_base_y + offset
 
+# Menu do jogo:
 def draw_menu(screen):
     screen.fill((130, 219, 157))
     screen.draw.filled_rect(button_play, color=(226, 214, 214))
@@ -41,6 +56,7 @@ def draw_menu(screen):
     fonts.on_game_text(screen, "Ajustes", center=button_ajustes.center)
     
 
+# Tela de jogo:
 def draw_game(screen):
     screen.fill((130, 219, 157))
     
@@ -53,7 +69,8 @@ def draw_game(screen):
 
     if protagonist_visible:
         thor.draw()
-            
+
+# Funções abaixo para controlar a visibilidade do texto, podendo intercalar para escrever na tela do jogo:
 def hide_primary_text_schedule():
     global primary_text_schedule
     primary_text_schedule = False
@@ -69,6 +86,7 @@ def show_second_text_schedule():
     
     clock.schedule(hide_second_text_schedule, 3.0)
     
+# Função para verificar o clique no menu:
 def check_menu_click(pos):
     if button_play.collidepoint(pos):
         return "game"
