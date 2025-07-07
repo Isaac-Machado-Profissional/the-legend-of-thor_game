@@ -1,38 +1,34 @@
-WIDTH = 600
-HEIGHT = 400
-FULLSCREEN = False
-MODE_FONT = "bitcount"
-MODE_FONTSIZE = 25
+import game_screen
 
 SCREEN_OPTION = "menu"
+WIDTH = game_screen.WIDTH
+HEIGHT = game_screen.HEIGHT
 
-button_play = Rect((20, HEIGHT - 120), (140, 40))
-button_ajustes = Rect((20, HEIGHT - 60), (140, 40))
+game_screen.primary_text_schedule = True
 
-def onGameText(text, **kwargs):
-    paramms = {
-        "fontname": MODE_FONT,
-        "fontsize": MODE_FONTSIZE,
-        "color": "black"
-    }
-    paramms.update(kwargs)
-    screen.draw.text(text, (WIDTH // 2, HEIGHT // 2), anchor=(0.5, 0.5), **paramms)
+def update():
+    if game_screen.protagonist_visible:
+        game_screen.update_protagonist()
 
 def draw():
-    screen.fill((130, 219, 157))
-
     if SCREEN_OPTION == "menu":
-        screen.draw.filled_rect(button_play, color=(226, 214, 214))
-        onGameText("Jogar", center=button_play.center)
-
-        screen.draw.filled_rect(button_ajustes, color=(226, 214, 214))
-        onGameText("Ajustes", center=button_ajustes.center)
-
+        game_screen.draw_menu(screen)
     elif SCREEN_OPTION == "game":
-        onGameText("Tela de Jogo", center=(WIDTH // 2, HEIGHT // 2), fontsize=40)
+        game_screen.draw_game(screen)
 
 def on_mouse_down(pos):
     global SCREEN_OPTION
+
     if SCREEN_OPTION == "menu":
-        if button_play.collidepoint(pos):
-            SCREEN_OPTION = "game"
+        SCREEN_OPTION = game_screen.check_menu_click(pos)
+
+        if SCREEN_OPTION == "game":
+            game_screen.primary_text_schedule = True
+            game_screen.second_text_schedule = False
+
+            # Oculta o texto inicial depois de 3 segundos (opcional)
+            clock.schedule(game_screen.hide_primary_text_schedule, 3.0)
+
+            # Exibe a pergunta depois de 3 segundos
+            clock.schedule(game_screen.show_second_text_schedule, 3.0)
+            
