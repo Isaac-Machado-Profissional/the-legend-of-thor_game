@@ -1,8 +1,9 @@
+# movement.py
+
 import game_screen
 from pgzero.builtins import keys
 from game_screen import movement, movement_speed
 
-# Limites da área jogável (ajustado para considerar o mundo, não a tela)
 def update_movement():
     if not game_screen.protagonist_visible:
         return
@@ -11,38 +12,36 @@ def update_movement():
     half_width = thor.width // 2
     half_height = thor.height // 2
 
-    # Limites do mapa
-    min_x = half_width // 2
-    max_x = game_screen.WIDTH - thor.width // 2
-
+    # ✅ DEFINA OS LIMITES DO MAPA AQUI
+    min_x = half_width
+    max_x = game_screen.WIDTH - half_width
     min_y = 200 + half_height
     max_y = game_screen.MAP_HEIGHT - 200 - half_height
 
-    # Movimento vertical com limite
-    if movement["up"] and game_screen.thor_world_y - movement_speed >= min_y:
-        game_screen.thor_world_y -= movement_speed
-    elif movement["up"]:
-        game_screen.thor_world_y = min_y
+    # --- LÓGICA DE MOVIMENTO ---
 
-    if movement["down"] and game_screen.thor_world_y + movement_speed <= max_y:
-        game_screen.thor_world_y += movement_speed
-    elif movement["down"]:
-        game_screen.thor_world_y = max_y
-
-    # Movimento horizontal com limite
-    if movement["left"] and thor.x - movement_speed >= min_x:
+    # Movimento horizontal
+    if movement["left"]:
         thor.x -= movement_speed
-        
-    elif movement["left"]:
-        thor.x = min_x
-
-    if movement["right"] and thor.x + movement_speed <= max_x:
+        game_screen.last_direction = "left"  # CORRIGIDO
+        if thor.x < min_x:
+            thor.x = min_x
+            
+    if movement["right"]:
         thor.x += movement_speed
-    elif movement["right"]:
-        thor.x = max_x
+        game_screen.last_direction = "right" # CORRIGIDO
+        if thor.x > max_x:
+            thor.x = max_x
 
-    # Respiração
-    if movement["up"] or movement["down"]:
-        game_screen.protagonist_float_phase += 0.3
-    else:
-        game_screen.protagonist_float_phase += 0.1
+    # Movimento vertical
+    if movement["up"]:
+        game_screen.thor_world_y -= movement_speed
+        game_screen.last_direction = "up" # CORRIGIDO
+        if game_screen.thor_world_y < min_y:
+            game_screen.thor_world_y = min_y
+            
+    if movement["down"]:
+        game_screen.thor_world_y += movement_speed
+        game_screen.last_direction = "down" # CORRIGIDO
+        if game_screen.thor_world_y > max_y:
+            game_screen.thor_world_y = max_y

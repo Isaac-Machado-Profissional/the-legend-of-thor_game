@@ -49,8 +49,8 @@ def on_mouse_down(pos):
             game_screen.second_text_schedule = False
 
             # Oculta o texto inicial depois de 3 segundos
-            clock.schedule(game_screen.hide_primary_text_schedule, 3.0)
-            clock.schedule(game_screen.show_second_text_schedule, 3.0)
+            clock.schedule(game_screen.hide_primary_text_schedule, 0)
+            clock.schedule(game_screen.show_second_text_schedule, 0)
 
     if game_screen.button_exit.collidepoint(pos):
         exit()
