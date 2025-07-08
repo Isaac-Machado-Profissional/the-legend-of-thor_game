@@ -1,5 +1,5 @@
-WIDTH = 600
-HEIGHT = 400
+WIDTH = 1280
+HEIGHT = 720
 FULLSCREEN = False
 
 MODE_FONT = "bitcount"
