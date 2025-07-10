@@ -11,22 +11,15 @@ Um jogo com o objetivo de **fugir dos cogumelos**, desenvolvido conforme as soli
 
 Para rodar este projeto, é necessário ter:
 
-- 🐍 [Python](https://www.python.org/downloads/)
-- 🧬 [Git](https://git-scm.com/)
-- 📦 PIP (gerenciador de pacotes do Python)
-- 📚 Bibliotecas externas:  
+- [Python](https://www.python.org/downloads/)
+- [Git](https://git-scm.com/)
+- PIP (gerenciador de pacotes do Python)
+- Bibliotecas externas:  
   - [`pygame`](https://www.pygame.org/news)  
   - [`pgzero`](https://github.com/lordmauve/pgzero)
-- 💻 Uma IDE ou algum terminal de preferência
+- Uma IDE ou algum terminal de preferência
 
 ---
-
-## 📥 Download Rápido
-
-Você pode baixar o projeto como `.zip`, sem precisar usar o GIT:
-
-👉 [Baixar projeto ZIP](https://github.com/Isaac-Machado-Profissional/thorGame/archive/refs/heads/main.zip)
-
 
 ## 🚀 Como executar o projeto
 
@@ -39,4 +32,11 @@ Você pode baixar o projeto como `.zip`, sem precisar usar o GIT:
    ```
 3. Você pode optar por entrar na pasta `ThorGame`, rodar o comando de instalação de `requisitos` 
 ([veja o passo anterior](#-como-executar-o-projeto)) e depois simplesmente dar um duplo clique no arquivo `main.py` em seu explorador.
+
+## 📥 Download Rápido
+
+Você pode baixar o projeto como `.zip`, sem precisar usar o GIT:
+
+👉 [Baixar projeto ZIP](https://github.com/Isaac-Machado-Profissional/thorGame/archive/refs/heads/main.zip)
+
 
