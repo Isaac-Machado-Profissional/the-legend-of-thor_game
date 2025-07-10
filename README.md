@@ -3,7 +3,7 @@
 Um jogo com o objetivo de **fugir dos cogumelos**, desenvolvido conforme as solicitações da **Kodland Brasil**.
 
 **Documento de referência da Kodland**  
-🔗 [Solicitação Oficial](https://docs.google.com/document/d/1Gk-m0F_Sd4Lkzv2yRyp2Xct9ttOUF3oca0dnX367GEY/edit?tab=t.0)
+🔗 [Solicitação Oficial](https://docs.google.com/document/d/1820JJynIwOm5cI0DV8hja_0Ytlrz0uFVY5QxQ5e9p_I/edit?tab=t.0&_blank)
 
 ---
 
