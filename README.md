@@ -30,7 +30,7 @@ Para rodar este projeto, é necessário ter:
    pip install -r requirements.txt
    pgzrun main.py
    ```
-3. Você pode optar por entrar na pasta `ThorGame`, rodar o comando de instalação de `requisitos` 
+> Você pode optar por entrar na pasta `ThorGame` manualmente, rodar o comando de instalação de `requisitos` 
 ([veja o passo anterior](#-como-executar-o-projeto)) e depois simplesmente dar um duplo clique no arquivo `main.py` em seu explorador.
 
 ---
