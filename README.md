@@ -1,20 +1,42 @@
-Uma breve descrição sobre esse projeto.
-Um jogo com o objetivo de fugir dos cogumelos, conforme solicitado pela Kodland Brasil,
+# 🎮 ThorGame
 
-Documento de solicitação da Kodland:
-- https://docs.google.com/document/d/1Gk-m0F_Sd4Lkzv2yRyp2Xct9ttOUF3oca0dnX367GEY/edit?tab=t.0
+Um jogo com o objetivo de **fugir dos cogumelos**, desenvolvido conforme as solicitações da **Kodland Brasil**.
 
-Requisitos para rodar esse projeto:
+**Documento de referência da Kodland**  
+🔗 [Solicitação Oficial](https://docs.google.com/document/d/1Gk-m0F_Sd4Lkzv2yRyp2Xct9ttOUF3oca0dnX367GEY/edit?tab=t.0)
 
-- Python
-- GIT
-- PIP
-- Duas bibliotecas externas: PyGame e PyGameZero
-- Uma IDE ou terminal de preferência
+---
+
+## ✅ Requisitos
+
+Para rodar este projeto, é necessário ter:
+
+- 🐍 [Python](https://www.python.org/downloads/)
+- 🧬 [Git](https://git-scm.com/)
+- 📦 PIP (gerenciador de pacotes do Python)
+- 📚 Bibliotecas externas:  
+  - [`pygame`](https://www.pygame.org/news)  
+  - [`pgzero`](https://github.com/lordmauve/pgzero)
+- 💻 Uma IDE ou algum terminal de preferência
+
+---
+
+## 📥 Download Rápido
+
+Você pode baixar o projeto como `.zip`, sem precisar usar o GIT:
+
+👉 [Baixar projeto ZIP](https://github.com/Isaac-Machado-Profissional/thorGame/archive/refs/heads/main.zip)
 
 
-Comandos parar rodar esse projeto:
+## 🚀 Como executar o projeto
 
-- Caminhe até a pasta ThorGame
-- Na raiz do projeto rode pip install -r requirements.txt
-- Execute o script principal clicando duas vezes em cima do arquivo _main.py_ ou use _pgzrun main.py_
+1. Abra seu terminal ou IDE
+2. Navegue até a pasta do projeto:
+   ```bash
+   cd ThorGame 
+   pip install -r requirements.txt
+   pgzrun main.py
+   ```
+3. Você pode optar por entrar na pasta `ThorGame`, rodar o comando de instalação de `requisitos` 
+([veja o passo anterior](#-como-executar-o-projeto)) e depois simplesmente dar um duplo clique no arquivo `main.py` em seu explorador.
+
