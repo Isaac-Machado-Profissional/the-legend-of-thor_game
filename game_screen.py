@@ -210,7 +210,7 @@ def draw_game(screen):
     if primary_text_schedule:
         center_text(screen, "Midgard", WIDTH, HEIGHT, fontsize=40)
     if second_text_schedule:
-        center_text(screen, "Você é o Thor, Deus do Trovão ou o Deus do Martelo?", WIDTH, HEIGHT, fontsize=20)
+        center_text(screen, "Você é o Thor", WIDTH, HEIGHT, fontsize=20)
 
     # Apenas desenha os personagens se eles estiverem visíveis
     if protagonist_visible:
