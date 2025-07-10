@@ -12,7 +12,7 @@ Um jogo com o objetivo de **fugir dos cogumelos**, desenvolvido conforme as soli
 Para rodar este projeto, é necessário ter:
 
 - [Python](https://www.python.org/downloads/)
-- [Git](https://git-scm.com/)
+- [GIT](https://git-scm.com/)
 - PIP (gerenciador de pacotes do Python)
 - Bibliotecas externas:  
   - [`pygame`](https://www.pygame.org/news)  
