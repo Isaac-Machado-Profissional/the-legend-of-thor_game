@@ -16,7 +16,7 @@ Para rodar este projeto, é necessário ter:
 - PIP (gerenciador de pacotes do Python)
 - Bibliotecas externas:  
   - [`pygame`](https://www.pygame.org/news)  
-  - [`pgzero`](https://github.com/lordmauve/pgzero)
+  - [`pgzero`](https://pygame-zero.readthedocs.io/en/stable/index.html)
 - Uma IDE ou algum terminal de preferência
 
 ---
