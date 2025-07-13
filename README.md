@@ -1,4 +1,4 @@
-# 🎮 ThorGame
+# 🎮 The Legend of Thor
 
 Um jogo com o objetivo de **fugir dos cogumelos**, desenvolvido conforme as solicitações da **Kodland Brasil**.
 
